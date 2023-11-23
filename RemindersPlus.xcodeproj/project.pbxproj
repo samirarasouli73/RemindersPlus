@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3788BA852B0795CF00473411 /* ModalViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788BA7F2B0795CF00473411 /* ModalViewData.swift */; };
+		3788BA862B0795CF00473411 /* ReminderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788BA802B0795CF00473411 /* ReminderData.swift */; };
+		3788BA872B0795CF00473411 /* AddListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788BA812B0795CF00473411 /* AddListData.swift */; };
+		3788BA882B0795CF00473411 /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788BA822B0795CF00473411 /* AddListView.swift */; };
+		3788BA892B0795CF00473411 /* RemindersMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788BA832B0795CF00473411 /* RemindersMain.swift */; };
+		3788BA8A2B0795CF00473411 /* NewReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788BA842B0795CF00473411 /* NewReminderView.swift */; };
 		37D7DB902B04ED4D00240436 /* RemindersPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7DB8F2B04ED4D00240436 /* RemindersPlusApp.swift */; };
 		37D7DB922B04ED4D00240436 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7DB912B04ED4D00240436 /* ContentView.swift */; };
 		37D7DB942B04ED4E00240436 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37D7DB932B04ED4E00240436 /* Assets.xcassets */; };
@@ -14,6 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3788BA7F2B0795CF00473411 /* ModalViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewData.swift; sourceTree = "<group>"; };
+		3788BA802B0795CF00473411 /* ReminderData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderData.swift; sourceTree = "<group>"; };
+		3788BA812B0795CF00473411 /* AddListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddListData.swift; sourceTree = "<group>"; };
+		3788BA822B0795CF00473411 /* AddListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
+		3788BA832B0795CF00473411 /* RemindersMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersMain.swift; sourceTree = "<group>"; };
+		3788BA842B0795CF00473411 /* NewReminderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReminderView.swift; sourceTree = "<group>"; };
 		37D7DB8C2B04ED4D00240436 /* RemindersPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindersPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D7DB8F2B04ED4D00240436 /* RemindersPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersPlusApp.swift; sourceTree = "<group>"; };
 		37D7DB912B04ED4D00240436 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +65,12 @@
 			children = (
 				37D7DB8F2B04ED4D00240436 /* RemindersPlusApp.swift */,
 				37D7DB912B04ED4D00240436 /* ContentView.swift */,
+				3788BA812B0795CF00473411 /* AddListData.swift */,
+				3788BA822B0795CF00473411 /* AddListView.swift */,
+				3788BA7F2B0795CF00473411 /* ModalViewData.swift */,
+				3788BA842B0795CF00473411 /* NewReminderView.swift */,
+				3788BA802B0795CF00473411 /* ReminderData.swift */,
+				3788BA832B0795CF00473411 /* RemindersMain.swift */,
 				37D7DB932B04ED4E00240436 /* Assets.xcassets */,
 				37D7DB952B04ED4E00240436 /* Preview Content */,
 			);
@@ -138,6 +156,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				37D7DB922B04ED4D00240436 /* ContentView.swift in Sources */,
+				3788BA862B0795CF00473411 /* ReminderData.swift in Sources */,
+				3788BA872B0795CF00473411 /* AddListData.swift in Sources */,
+				3788BA892B0795CF00473411 /* RemindersMain.swift in Sources */,
+				3788BA882B0795CF00473411 /* AddListView.swift in Sources */,
+				3788BA8A2B0795CF00473411 /* NewReminderView.swift in Sources */,
+				3788BA852B0795CF00473411 /* ModalViewData.swift in Sources */,
 				37D7DB902B04ED4D00240436 /* RemindersPlusApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,21 +299,25 @@
 				DEVELOPMENT_TEAM = Y66QUWBHVN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.samira.RemindersPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,21 +332,25 @@
 				DEVELOPMENT_TEAM = Y66QUWBHVN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.samira.RemindersPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
