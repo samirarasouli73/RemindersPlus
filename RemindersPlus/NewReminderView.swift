@@ -152,6 +152,7 @@ struct NewReminderView: View {
     
     func addNewReminder() {
             let reminder = Reminder(
+                id: UUID(),
                 title: reminderTitle,
                 notes: reminderNotes,
                 date: selectedDate,
@@ -163,14 +164,21 @@ struct NewReminderView: View {
                 isComplete: false
             )
             
-            modalViewData.addReminder(reminder)
+            saveReminder(reminder)
             presentationMode.wrappedValue.dismiss()
+        }
+    func saveReminder(_ reminder: Reminder) {
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(reminder) {
+                let key = "Reminder_\(reminder.id)"
+                UserDefaults.standard.set(encoded, forKey: key)
+            }
         }
     }
 
 
-struct Reminder: Identifiable {
-    let id = UUID()
+struct Reminder: Identifiable, Codable {
+    let id: UUID
     var title: String
     var notes: String
     var date: Date?

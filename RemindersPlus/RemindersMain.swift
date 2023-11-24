@@ -161,6 +161,7 @@ struct RemindersMain: View {
 }
 
 struct CardView: View {
+    @State private var isPresented = false
     var icon: String
     var title: String
     var listCount: Int?
@@ -170,7 +171,7 @@ struct CardView: View {
     
     var body: some View {
         Button(action: {
-            print("Button tapped for \(title)")
+            isPresented = true
         }) {
             HStack {
                 VStack(alignment: .leading) {
@@ -207,8 +208,12 @@ struct CardView: View {
             .shadow(radius: 0)
         }
         .buttonStyle(PlainButtonStyle())
+        .sheet(isPresented: $isPresented) {
+            RemindersView()
+        }
     }
 }
+
 
 #Preview {
     RemindersMain()
