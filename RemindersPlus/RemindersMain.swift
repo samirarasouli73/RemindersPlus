@@ -8,6 +8,7 @@ struct RemindersMain: View {
     @State private var isEditing = false
     @State private var reminders = ReminderData().icons
     
+    
     private let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     
     var body: some View {
@@ -50,32 +51,33 @@ struct RemindersMain: View {
     }
     
     var customScrollView: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(reminders.indices.filter { searchText.isEmpty ? true : ReminderData().titles[$0].contains(searchText) }, id: \.self) { index in
-                    Button(action: {
-                        print("Button tapped for index \(index)")
-                    }) {
-                        VStack {
-                            CardView(
-                                icon: ReminderData().icons[index],
-                                title: ReminderData().titles[index],
-                                listCount: (index == 4) ? nil : (index + 1) * 0,
-                                backgroundColor: .white,
-                                iconColor: ReminderData().iconColor[index],
-                                width: 170
-                            )
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 20) {
+                    ForEach(reminders.indices.filter { searchText.isEmpty ? true : ReminderData().titles[$0].contains(searchText) }, id: \.self) { index in
+                        Button(action: {
+                            print("Button tapped for index \(index)")
+                        }) {
+                            VStack {
+                                CardView(
+                                    icon: ReminderData().icons[index],
+                                    title: ReminderData().titles[index],
+                                    listCount: (index == 4) ? nil : (index + 1) * 0,
+                                    lightModeBackgroundColor: .white,
+                                    darkModeBackgroundColor: Color(.systemGray5 ),
+                                    iconColor: ReminderData().iconColor[index],
+                                    width: 170
+                                )
+                            }
+                            .accessibilityElement()
+                            .accessibilityIdentifier("card\(index)")
+                            .accessibilityLabel("Card \(ReminderData().titles[index])")
                         }
-                        .accessibilityElement()
-                        .accessibilityIdentifier("card\(index)")
-                        .accessibilityLabel("Card \(ReminderData().titles[index])")
+                        .buttonStyle(PlainButtonStyle())
                     }
-                    .buttonStyle(PlainButtonStyle())
                 }
+                .padding()
             }
-            .padding()
-        }
-        .background(Color(.systemGray6))
+            .background(Color(.systemGray6))
     }
     
     var customList: some View {
@@ -157,62 +159,8 @@ struct RemindersMain: View {
     func delete(at offsets: IndexSet) {
         reminders.remove(atOffsets: offsets)
     }
-    
 }
 
-struct CardView: View {
-    @State private var isPresented = false
-    var icon: String
-    var title: String
-    var listCount: Int?
-    var backgroundColor: Color
-    var iconColor: Color
-    var width: CGFloat
-    
-    var body: some View {
-        Button(action: {
-            isPresented = true
-        }) {
-            HStack {
-                VStack(alignment: .leading) {
-                    Image(systemName: icon)
-                        .font(.system(size: 35))
-                        .foregroundColor(iconColor)
-                        .padding(.horizontal, -5)
-                    
-                    Text(title)
-                        .font(.headline)
-                        .foregroundColor(Color(.systemGray))
-                        .padding(.vertical, 5)
-                        .bold()
-                }
-                
-                Spacer()
-                
-                if let listCount = listCount {
-                    Text("\(listCount)")
-                        .font(.title)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 5)
-                        .padding(.bottom, 30)
-                        .foregroundColor(.black)
-                        .bold()
-                } else {
-                    Spacer()
-                }
-            }
-            .padding()
-            .frame(width: width, height: 90)
-            .background(backgroundColor)
-            .cornerRadius(12)
-            .shadow(radius: 0)
-        }
-        .buttonStyle(PlainButtonStyle())
-        .sheet(isPresented: $isPresented) {
-            RemindersView()
-        }
-    }
-}
 
 
 #Preview {
